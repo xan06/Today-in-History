@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
      * connect the server and get the response.
      */
     private void connect() {
-        sendRequestWithOkhttp(API_BASE, new okhttp3.Callback() {
+        sendRequestWithOkHttp(API_BASE, new okhttp3.Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
             }
@@ -47,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    /*
+    OkHttpClient client = new OkHttpClient();
+    String run(String url) throws IOException {
+        Request request = new Request.Builder().url(url).build();
+        Response response = client.newCall(request).execute();
+        if (response.isSuccessful()) {
+            return response.body().string();
+        } else {
+            throw new IOException("Unexpected code " + response);
+        }
+    }
+    */
 
     /**
      * Convert the response to JSON.
@@ -72,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
      * @param address the URL
      * @param callback not important
      */
-    public static void sendRequestWithOkhttp(String address,okhttp3.Callback callback) {
+    public static void sendRequestWithOkHttp(String address,okhttp3.Callback callback) {
         //Create a OkHttpClient
         OkHttpClient client = new OkHttpClient();
         //Create a Request and put URL
