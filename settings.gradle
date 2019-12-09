@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='GetEvent'
+rootProject.name='Today in History'
