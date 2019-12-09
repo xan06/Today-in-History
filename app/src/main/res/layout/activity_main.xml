@@ -36,14 +36,13 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
 
-            <TextView
+            <com.barnettwong.autofitcolortextview_library.AutoFitColorTextView
                 android:id="@+id/event2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:text="Event 2"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
 
