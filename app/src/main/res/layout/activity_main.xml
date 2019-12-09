@@ -6,63 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/eventLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="534dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/event1"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            android:text="Event 1" />
+            android:orientation="vertical" >
 
-        <com.barnettwong.autofitcolortextview_library.AutoFitColorTextView
-            android:id="@+id/event2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp" />
+            <LinearLayout
+                android:id="@+id/eventLayout"
+                android:layout_width="match_parent"
+                android:layout_height="534dp"
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/event1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Event 1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="64dp"
-        android:text="Submit"
-        app:layout_constraintBottom_toTopOf="@+id/eventLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+                <com.barnettwong.autofitcolortextview_library.AutoFitColorTextView
+                    android:id="@+id/event2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/InputDate"
-        android:layout_width="132dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="MM/DD"
-        app:layout_constraintBottom_toTopOf="@+id/eventLayout"
-        app:layout_constraintEnd_toStartOf="@+id/submitButton"
-        app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/InputDate"
+                android:layout_width="132dp"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="date"
+                android:text="MM/DD" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="64dp"
+                android:text="Submit" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
