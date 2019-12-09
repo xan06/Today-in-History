@@ -8,22 +8,44 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteY="273dp">
 
         <LinearLayout
-            android:id="@+id/eventLayout"
+            android:id="@+id/eventlayout"
             android:layout_width="match_parent"
-            android:layout_height="534dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="64dp"
+                android:text="Submit"
+                app:layout_constraintBottom_toTopOf="@+id/eventLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/InputDate"
+                android:layout_width="132dp"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="date"
+                android:text="MM/DD"
+                app:layout_constraintBottom_toTopOf="@+id/eventLayout"
+                app:layout_constraintEnd_toStartOf="@+id/submitButton"
+                app:layout_constraintHorizontal_bias="0.433"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.545" />
 
             <TextView
                 android:id="@+id/event1"
@@ -47,35 +69,7 @@
                 android:textSize="20sp" />
 
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/InputDate"
-            android:layout_width="132dp"
-            android:layout_height="46dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:inputType="date"
-            android:text="MM/DD"
-            app:layout_constraintBottom_toTopOf="@+id/eventLayout"
-            app:layout_constraintEnd_toStartOf="@+id/submitButton"
-            app:layout_constraintHorizontal_bias="0.433"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.545" />
-
-        <Button
-            android:id="@+id/submitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
-            android:layout_marginEnd="64dp"
-            android:text="Submit"
-            app:layout_constraintBottom_toTopOf="@+id/eventLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
