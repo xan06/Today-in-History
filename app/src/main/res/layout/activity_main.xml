@@ -9,7 +9,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="731dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,13 +36,14 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
 
-            <com.barnettwong.autofitcolortextview_library.AutoFitColorTextView
+            <TextView
                 android:id="@+id/event2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:text="Event 2"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
 

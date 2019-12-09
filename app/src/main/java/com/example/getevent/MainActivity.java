@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 // 在这里进行UI操作，将结果显示到界面上
                 //Set up UI
                 TextView event1 = findViewById(R.id.event1);
-                com.barnettwong.autofitcolortextview_library.AutoFitColorTextView event2 = findViewById(R.id.event2);
+                TextView event2 = findViewById(R.id.event2);
                 event1.setText(response.getData().getBirths().get(0).toString());
                 event2.setText(response.getData().getEvents().get(0).toString());
             }
