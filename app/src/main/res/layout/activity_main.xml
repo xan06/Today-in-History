@@ -27,8 +27,8 @@
 
         <TextView
             android:id="@+id/event1"
-            android:layout_width="368dp"
-            android:layout_height="179dp"
+            android:layout_width="307dp"
+            android:layout_height="43dp"
             android:text="Event 1" />
 
         <TextView
