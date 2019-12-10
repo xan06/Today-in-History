@@ -1,15 +1,17 @@
 package com.example.getevent;
 
-import androidx.appcompat.app.AlertDialog;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
+
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -25,10 +27,16 @@ public class MainActivity extends AppCompatActivity {
     /** the user input of the date. */
     private String input = "";
 
+    private LinearLayout eventLayout;
+    private ObservableScrollView scroll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        eventLayout = (LinearLayout) findViewById(R.id.eventLayout);
+        scroll = (ObservableScrollView) findViewById(R.id.scrollView);
+        scroll.bringToFront();
 
         final EditText date = findViewById(R.id.InputDate);
         Button submit = findViewById(R.id.submitButton);
@@ -54,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
     }
     */
 
+    /**
+     * send Request with OkHttp (Get)
+     */
     private void sendRequestWithOkHttp() {
         new Thread(new Runnable() {
             @Override
@@ -72,21 +83,21 @@ public class MainActivity extends AppCompatActivity {
                     public void onFailure(Call call,IOException e){
                         //在这里进行异常情况处理
                         //Error message
-                        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                        alertDialog.setTitle("Alert");
-                        alertDialog.setMessage(e.getMessage());
-                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                    }
-                                });
-                        alertDialog.show();
+                        displayExceptionMessage(e.getMessage());
                     }
                 });
             }
         }).start();
     }
+
+    /**
+     * error msg
+     * @param msg message
+     */
+    public void displayExceptionMessage(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
 
     private void parseJSONWithGSON(String jsonData) {
         //使用轻量级的Gson解析得到的json
@@ -107,8 +118,11 @@ public class MainActivity extends AppCompatActivity {
                 //Set up UI
                 TextView event1 = findViewById(R.id.event1);
                 TextView event2 = findViewById(R.id.event2);
-                event1.setText(response.getData().getBirths().get(0).toString());
-                event2.setText(response.getData().getEvents().get(0).toString());
+                TextView event3 = findViewById(R.id.event3);
+                TextView event4 = findViewById(R.id.event4);
+                event1.setText("Birthday: \n\n" + response.getData().getBirths().get(0).toString());
+                event2.setText("Event: \n\n"+response.getData().getEvents().get(0).toString());
+                event3.setText("Death: \n\n"+response.getData().getDeaths().get(0).toString());
             }
         });
     }
