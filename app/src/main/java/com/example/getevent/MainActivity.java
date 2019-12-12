@@ -113,9 +113,12 @@ public class MainActivity extends AppCompatActivity {
                 TextView event2 = findViewById(R.id.event2);
                 TextView event3 = findViewById(R.id.event3);
                 TextView event4 = findViewById(R.id.event4);
+                TextView event5 = findViewById(R.id.even5);
                 event1.setText("Birthday: \n\n" + response.getData().getBirths().get(0).toString());
-                event2.setText("Event: \n\n"+response.getData().getEvents().get(0).toString());
-                event3.setText("Death: \n\n"+response.getData().getDeaths().get(0).toString());
+                event2.setText("Events: \n\n"+response.getData().getEvents().get(0).toString());
+                event3.setText(response.getData().getEvents().get(1).toString());
+                event4.setText(response.getData().getEvents().get(2).toString());
+                event5.setText("Death: \n\n"+response.getData().getDeaths().get(0).toString());
             }
         });
     }

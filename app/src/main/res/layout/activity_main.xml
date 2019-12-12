@@ -55,7 +55,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:maxLines="100"
-                android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
 
             <TextView
@@ -86,6 +85,15 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/even5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
                 android:textSize="20sp" />
         </LinearLayout>
     </com.example.getevent.ObservableScrollView>
