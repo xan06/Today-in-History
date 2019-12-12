@@ -69,19 +69,16 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                //在子线程中执行Http请求，并将最终的请求结果回调到okhttp3.Callback中
                 //Http request is executed in a child thread, and make result to oKHttp3.Callback
                 HttpUtil.sendOkHttpRequest(API_BASE + input,new okhttp3.Callback(){
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
-                        //得到服务器返回的具体内容
                         //Get result
                         String responseData=response.body().string();
                         parseJSONWithGSON(responseData);
                     }
                     @Override
                     public void onFailure(Call call,IOException e){
-                        //在这里进行异常情况处理
                         //Error message
                         displayExceptionMessage(e.getMessage());
                     }
@@ -100,21 +97,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void parseJSONWithGSON(String jsonData) {
-        //使用轻量级的Gson解析得到的json
         //Create Gson
         Gson gson = new Gson();
         Result result = gson.fromJson(jsonData, Result.class);
-        //显示UI界面，调用的showResponse方法
         //Setup UI
         showResponse(result);
     }
     private void showResponse(final Result response) {
-        //在子线程中更新UI
         //Update UI in child thread
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                // 在这里进行UI操作，将结果显示到界面上
                 //Set up UI
                 TextView event1 = findViewById(R.id.event1);
                 TextView event2 = findViewById(R.id.event2);
